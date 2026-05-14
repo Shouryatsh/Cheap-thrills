@@ -112,8 +112,10 @@ def monthly_summary(trade_log: pd.DataFrame) -> dict:
     total_premium = float(monthly.get("total_premium", pd.Series(dtype=float)).sum())
     total_trades = len(monthly)
 
-    # Pro-rate the low target by fraction of month elapsed
-    day_fraction = min(datetime.now().day / 30.0, 1.0)
+    # Pro-rate the low target by fraction of month elapsed (use actual days in month)
+    import calendar as _calendar
+    days_in_month = _calendar.monthrange(datetime.now().year, datetime.now().month)[1]
+    day_fraction = min(datetime.now().day / days_in_month, 1.0)
     on_track = total_premium >= MONTHLY_TARGET_LOW * day_fraction
 
     return {

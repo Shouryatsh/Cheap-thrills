@@ -110,7 +110,7 @@ def cmd_screen(args: argparse.Namespace) -> None:
 
     top.to_csv("candidates.csv", index=False)
     print("\n✓ Candidates saved to candidates.csv")
-    print(f"\nNext: python main.py portfolio --capital {args.capital}")
+    print(f"\nNext: python main.py portfolio --capital <your-capital>")
 
 
 def cmd_portfolio(args: argparse.Namespace) -> None:

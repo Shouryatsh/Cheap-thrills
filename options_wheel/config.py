@@ -21,7 +21,7 @@ CAPITAL_PER_POSITION_MAX: float = 10_000.0
 MIN_FCF: float = 0.0                     # Positive free cash flow required
 MIN_NET_PROFIT_MARGIN: float = 0.15      # Net profit margin > 15 %
 MAX_DEBT_TO_ASSETS: float = 0.50         # Debt-to-assets < 50 %
-MIN_MARKET_CAP: float = 5e9             # $5 B+ for options liquidity
+MIN_MARKET_CAP: float = 5_000_000_000.0  # $5 B+ for options liquidity
 NEAR_52W_LOW_THRESHOLD: float = 0.15    # Within 15 % of the 52-week low
 
 # ──────────────────────────────────────────────────────────────────────────────
